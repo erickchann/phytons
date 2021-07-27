@@ -1,0 +1,283 @@
+@font-face {
+	font-family: Gorimance;
+	src: url('../font/gomarice_no_continue.ttf');
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: Gorimance;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #03192a;
+}
+
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .8);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.title {
+	color: paleturquoise;
+}
+
+.instruction-list {
+	text-align: center;
+	width: 55%;
+}
+
+.instruction-list {
+	padding: 0;
+}
+
+.instruction-list li {
+	font-size: 0px;
+	margin: 10px 0;
+	list-style: none;
+	animation: instructions .5s forwards;
+}
+
+.instruction-list li:nth-child(1) {
+	animation-delay: 100ms;
+}
+
+.instruction-list li:nth-child(2) {
+	animation-delay: 200ms;
+}
+
+.instruction-list li:nth-child(3) {
+	animation-delay: 300ms;
+}
+
+.instruction-list li:nth-child(4) {
+	animation-delay: 400ms;
+}
+
+.instruction-list li:nth-child(5) {
+	animation-delay: 500ms;
+}
+
+.instruction-list li:nth-child(6) {
+	animation-delay: 600ms;
+}
+
+.instruction-list li:nth-child(7) {
+	animation-delay: 700ms;
+}
+
+.instruction-list li:nth-child(8) {
+	animation-delay: 800ms;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+}
+
+input[type=text] {
+	padding: 1vh 2vw;
+	color: black;
+	font-family: Gorimance;
+	font-weight: bold;
+	background-color: #97dee7c9;
+	border: none;
+	outline: none;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	font-size: 4vh;
+	transform: scale(0);
+	animation: pop 1s forwards 900ms;
+}
+
+.btn-primary {
+	transform: scale(0);
+	padding: 1vh 2vw;
+	color: white;
+	font-family: Gorimance;
+	background-color: #0069d9;
+	cursor: not-allowed;
+	border: none;
+	border-radius: 10px;
+	font-size: 4vh;
+	animation: pop 1s forwards 1000ms;
+	transition: .2s;
+}
+
+.btn-primary:hover {
+	background-color: #5d96d4;
+}
+
+.modal .title {
+	font-size: 6vh;
+	transform: scale(0);
+	animation: pop 1s forwards;
+}
+
+@keyframes instructions {
+	50% {
+		font-size: 1.5vw;
+	}
+
+	100% {
+		font-size: 1.8vw;
+	}
+}
+
+@keyframes pop {
+	50% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale(1.0);
+	}
+}
+
+
+.game-area {
+	width: 1024px;
+	height: 1024px;
+	background-color: #14202A;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header {
+	height: 150px;
+	width: 85%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header > * {
+	width: 200px;
+}
+
+.timer {
+	text-align: right;
+}
+
+header div {
+	color: paleturquoise;
+	font-size: 30px;
+}
+
+
+header h1 {
+	text-align: center;
+	font-size: 50px;
+}
+
+canvas {
+	background-color: black;
+}
+
+footer {
+	width: 85%;
+	margin-top: 10px;
+}
+
+input[type=range] {
+	display: none;
+	appearance: none;
+	width: 100%;
+	height: 5px;
+	border-radius: 10px;
+	outline: none;
+	background-color: #5F7898;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  	appearance: none;
+  	width: 25px;
+  	height: 25px;
+  	background-color: #5F7898;
+  	border-radius: 50%;
+  	cursor: pointer;
+}
+
+.btn-group {
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.btn-rewind {
+	margin: 0 5px;
+	padding: 10px 20px;
+	color: white;
+	font-family: Gorimance;
+	background-color: orange;
+	cursor: pointer;
+	border: none;
+	border-radius: 10px;
+	font-size: 25px;
+	transition: .2s;
+}
+
+.btn-rewind:hover {
+	background-color: yellow;
+}
+
+.btn-cancel {
+	display: none;
+	margin: 0 5px;
+	padding: 10px 20px;
+	color: white;
+	font-family: Gorimance;
+	background-color: #0069d9;
+	cursor: pointer;
+	border: none;
+	border-radius: 10px;
+	font-size: 25px;
+	transition: .2s;
+}
+
+.btn-cancel:hover {
+	background-color: #5d96d4;
+}
+
+#modal-over {
+	display: none;
+}
+
+table {
+	transform: scale(0);
+	width: 60%;
+	margin-bottom: 50px;
+	font-size: 3vh;
+	animation: pop forwards 1s;
+}
+
+thead {
+	background-color: #0069d9;
+}
+
+td {
+	text-align: center;
+}
+
+.btn-primary.again {
+	cursor: pointer;
+}

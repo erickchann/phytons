@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Phytons</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="modal" id="modal" aria-modal="true">
+		<h1 class="title">Instructions</h1>
+
+		<ul class="instruction-list" role="list">
+	        <li>1. To move phyton, player can use arrow keys or “WASD”</li>
+	        <li>2. North with up arrow or ‘w’</li>
+	        <li>3. South with down arrow or ‘s’</li>
+	        <li>4. East with right arrow or ‘d’</li>
+	        <li>5. West with left arrow or ‘a’</li>
+	        <li>6. Phyton’s starting point is in the middle of board and moving east (from left to right)
+	            automatically 4 grid per second. The phyton moves only north, south, east, or west.</li>
+	        <li>7. If phyton head hit board edge, then its head should appear on the opposite edge.</li>
+	        <li>8. Player can cancel the rewind feature using “Cancel Rewind” button.</li>
+	    </ul>
+
+	    <div class="form-group" role="group">
+	    	<input type="text" name="username" id="username" onkeydown="activeBtn(this.value)" autocomplete="off" role="button">
+	    	<button type="button" class="btn-primary" id="play" disabled onclick="play()" role="button">PLAY</button>
+	    </div>
+    </div>
+
+    <div class="game-area">
+    	<header>
+    		<div class="score">
+    			Score: 6
+    		</div>
+
+    		<h1 class="title">PHYTONS</h1>
+
+    		<div class="timer">Time: 00:00:00</div>
+    	</header>
+
+    	<main>
+    		<canvas width="960" height="600"></canvas>
+    	</main>
+
+    	<footer>
+
+    		<input type="range" name="slider" id="slider" min="0" max="4" value="4" oninput="rewind(this.value)" aria-valuemin="0" aria-valuemax="4">
+
+    		<div class="btn-group">
+	    		<button type="button" class="btn-cancel" id="cancel" onclick="cancel()" role="button">Cancel</button>
+	    		<button type="button" class="btn-rewind" id="rewind" onclick="activeRewind()" role="button">Rewind</button>
+    		</div>
+    	</footer>
+    </div>
+
+    <div class="modal" id="modal-over" aria-modal="true">
+		<h1 class="title">Game Over</h1>
+
+		<table border="0" cellpadding="10" cellspacing="0">
+			<thead>
+				<tr>
+					<td>No</td>
+					<td>Username</td>
+					<td>Highscore</td>
+				</tr>
+			</thead>
+
+			<tbody id="table">
+				
+			</tbody>
+		</table>
+
+		<form>
+		    <div class="form-group" role="group">
+		    	<button type="submit" class="btn-primary again" role="button">Play Again</button>
+		    </div>
+	    </form>
+    </div>
+
+<script src="js/Food.js"></script>
+<script src="js/Snake.js"></script>
+<script src="js/Game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
